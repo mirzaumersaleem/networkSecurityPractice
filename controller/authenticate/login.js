@@ -1,7 +1,7 @@
 var login =function(user,password){
 
     console.log(user,password)
-    if(user==="nima@nima.com" && password==="nima"){
+    if(user==="mirza@gmail.com" && password==="mirza"){
         return true;
     }
     else{
