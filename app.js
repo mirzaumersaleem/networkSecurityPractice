@@ -23,7 +23,7 @@ const limiter = rateLimit({
 });
  
 //  apply to all requests
-app.use(limiter);
+// app.use(limiter);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
