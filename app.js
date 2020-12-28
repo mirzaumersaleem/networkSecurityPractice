@@ -23,7 +23,7 @@ const limiter = rateLimit({
 });
  
 //  apply to all requests
-app.use(limiter);
+// app.use(limiter);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -31,7 +31,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/users', usersRouter , limiter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

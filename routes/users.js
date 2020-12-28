@@ -1,7 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var login = require('../controller/authenticate/login');
+const rateLimit = require("express-rate-limit");
 
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 2 // limit each IP to 100 requests per windowMs
+  });
 /* GET users listing. */
 router.get('/', function (req, res, next) {
     res.send('respond with a resource');
