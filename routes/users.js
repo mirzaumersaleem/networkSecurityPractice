@@ -13,7 +13,7 @@ router.get('/', function (req, res, next) {
 });
 
 /* GET users listing. */
-router.get('/getAreaNames', function (req, res, next) {
+router.get('/getAreaNames',limiter, function (req, res, next) {
    let area =  [
         {
             "_id": "5e062857ad5c9834732af44f",
